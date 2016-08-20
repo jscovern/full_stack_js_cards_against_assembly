@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CardsAgainstAssembly">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cards Against Assembly™</title>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/cardsController.js"></script>
+        <script src="scripts/controllers/cardDirective.js"></script>
+    </head>
+    <body>
+      <div class="container">
+        <header class="navbar">
+          <h1 class="pull-left">Cards Against Assembly</h1>
+
+          <scores></scores>
+        </header>
+
+        <section id="cards" class="container-fluid">
+          <div class="row" ng-view>
+
+          </div>
+        </section>
+        <br>
+        <form ng-controller="CardPostController as postCtrl" ng-submit="postCtrl.postCard()">
+          <div>
+            <label for="newCard-question">Question:</label>
+            <input type="text" id="newQuestion-name" ng-model="newCard.question" placeholder="Something funny">
+          </div>
+          <div>
+            <label for="newCard-Answer">Answer:</label>
+            <input type="text" id="newCard-answer" ng-model="newCard.answer" placeholder="Funny Answer">
+          </div>
+          <div>
+            <input type="submit" value="Create New Card">
+          </div>
+        </form>
+        <!-- <wdi-card question="Why is Angular so awesome?"></wdi-card> -->
+
+      <footer>
+        <p>Made with <span class="heart">♥︎</span> at General Assembly</p>
+      </footer>
+      </div>
+    </body>
+</html>

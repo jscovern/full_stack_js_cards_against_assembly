@@ -1,0 +1,5 @@
+<div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="card in questionsList">
+	<a ng-href="/#/api/{{card._id}}">
+		<wdi-card question="{{card.question}}"></wdi-card>
+	</a>
+</div>
